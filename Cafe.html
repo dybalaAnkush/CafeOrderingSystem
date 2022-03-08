@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CafeSnowDay</title>
+    <link rel="stylesheet" href="Cafe_Design.css">
+    <script src="Cafe_Function.js"></script>
+</head>
+<body onload="getDate()">
+    <div id="date"></div><br>
+    <div id="contactinfo">
+        <br><p>Hello! Welcome to Cafe Europa. First, please enter you contact details.</p><br>
+        <form onsubmit="storeData(); return false">
+            <fieldset>
+                <legend>Customer Info</legend>
+                <ol>
+                    <li><label class="info">Full Name</label><input type="text" class="info" pattern="[A-Za-z_- ]" id="fullname" maxlength="25" size="20" autofocus required></li>
+                    <li><label class="info">Telephone Number</label><input type="tel"  class="info" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="telnum" maxlength="25" size="20" required></li>
+                    <li><label class="info">Time to Pickup Order</label><input type="datetime-local"  class="info" id="pickuptime" required></li>
+                    <li><input type="submit" value="Submit Info"></li>
+                </ol>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="order">
+        <p>Please choose the items you would like to order and specify how many!</p>
+        <form onsubmit="checkout(); return false">
+            <fieldset id="orderfieldset">
+                <legend>Order</legend>
+                    <div class="categories">
+                        <h3>Neapolitan Style Pizza</h3>
+                        <table id="pizza">
+                            <tr>
+                                <th>Pick:</th>
+                                <th>Pizza:</th>
+                                <th>Price:</th>
+                                <th>Quantity:</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '1')"></td>
+                                <td><label class="itemfield">Margherita: </label></td>
+                                <td><label class="itemfield">$12.00  </label></td>
+                                <td><input name="Margherita:" type="number" value="0" id="1" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '2')"></td>
+                                <td><label class="itemfield">Quattro Formaggi: </label></td>
+                                <td><label class="itemfield">$12.50  </label></td>
+                                <td><input name="Quattro Formaggia:" type="number" value="0" id="2" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '3')"></td>
+                                <td><label class="itemfield">Capricciosa: </label></td>
+                                <td><label>$13.00  </label></td>
+                                <td><input name="Capricciosa:" type="number" value="0" id="3" min="0"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="categories">
+                        <h3>Sandwich Choices</h3>
+                        <table id="sandwich">
+                            <tr>
+                                <th>Pick:</th>
+                                <th>Sandwiches:</th>
+                                <th>Price:</th>
+                                <th>Quantity:</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '4')"></td>
+                                <td><label class="itemfield">Schnitzel: </label></td>
+                                <td><label class="itemfield">$8.50  </label></td>
+                                <td><input name="Schnitzel:" type="number" value="0" id="4" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '5')"></td>
+                                <td><label class="itemfield">Mixed Grill: </label></td>
+                                <td><label class="itemfield">$9.50  </label></td>
+                                <td><input name="Mixed Grill:" type="number" value="0" id="5" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '6')"></td>
+                                <td><label class="itemfield">Big Beef on a Bun: </label></td>
+                                <td><label >$10.00  </label></td>
+                                <td><input name="Big Beef on a Bun:" type="number" value="0" id="6" min="0"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="categories">
+                        <h3>Bevarages</h3>
+                        <table id="bevarages">
+                            <tr>
+                                <th>Pick:</th>
+                                <th>Drink:</th>
+                                <th>Price:</th>
+                                <th>Quantity:</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '7')"></td>
+                                <td><label class="itemfield">Coffee: </label></td>
+                                <td><label class="itemfield">$2.00  </label></td>
+                                <td><input name="Coffee:" type="number" value="0" id="7" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '8')"></td>
+                                <td><label class="itemfield">Latte: </label></td>
+                                <td><label class="itemfield">$2.50  </label></td>
+                                <td><input name="Latte:" type="number" value="0" id="8" min="0"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" onclick="checkbox(this, '9')"></td>
+                                <td><label class="itemfield">Soft Drink: </label></td>
+                                <td><label>$1.75  </label></td>
+                                <td><input name="Soft Drink:" type="number" value="0" id="9" min="0"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <input type="submit" value="Checkout">
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="receipt">
+        <fieldset>
+            <legend>Receipt</legend>
+            <div id="receiptcontactinfo"></div>
+            <div id="receiptorderinfo"></div>
+        </fieldset>
+    </div>
+</body>
+</html>

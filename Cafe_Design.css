@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(77, 51, 25);
+    /*[1] J. Mayyal Pixels. https://www.pexels.com/photo/neon-signboard-with-milk-box-and-word-moo-near-table-6894905/ */
+    background-image: url("./photos/pexels-jarrah-mayyal-6894905.jpg");
+    background-size: 1000px 1000px; 
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    float: left;
+    background-color: rgba(128, 82, 37, 0.8);
+}
+
+fieldset {
+    width: 100px;
+}
+
+fieldset ol {
+    list-style: none;
+    padding: 0;
+}
+
+fieldset ol li{
+    margin: 0 0 9px 0;
+    padding: 0px;
+}
+
+table {
+    float: left;
+    margin: 0px;
+    border: solid;
+    border-width: 0.5px;
+}
+
+th, td {
+    height: 20px;
+    width: auto;
+    margin: 0px;
+    padding-right: 10px;
+}
+
+input[type="number"]{
+    width: 30px;
+    visibility: hidden;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+}
+
+#orderfieldset {
+    width: auto;
+}
+
+#order{
+    display: none;
+}
+
+#receipt{
+    display: none;
+}
+
+.info{
+    display: block;
+}
+
+.categories{
+    margin: 10px;
+}
